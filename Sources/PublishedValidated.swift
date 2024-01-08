@@ -67,6 +67,10 @@ public final class PublishedValidated<Value: Equatable>: ObservableObject, Valid
         isInvalidAfterChanges ? error : nil
     }
 
+    public func reset() {
+        self.hasChanges = false
+    }
+
     public func validate() {
         do {
             try validation.validate(value)
